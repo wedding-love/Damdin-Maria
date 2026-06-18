@@ -546,7 +546,8 @@
         .color-4 { background-color: #efa888; }
         .color-5 { background-color: #afcbe5; }
 
-        .moodboard { position: relative; width: 100%; height: 380px; margin-bottom: 40px; }
+        /* КВАДРАТНЫЕ ФОТО С ОСТРЫМИ УГЛАМИ, УМЕНЬШЕННЫЕ */
+        .moodboard { position: relative; width: 100%; height: 400px; margin-bottom: 40px; }
         .moodboard:last-child { margin-bottom: 0; }
         .look-card {
             position: absolute;
@@ -554,23 +555,23 @@
             background-position: center;
             background-color: #f4f4f4;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            border-radius: 12px;
+            border-radius: 0px;
             opacity: 0;
             transform: scale(0.95);
             transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1);
         }
         .look-card.visible-card { opacity: 1; transform: scale(1); }
-        .ladies .card-main { width: 44%; height: 240px; left: 28%; top: 0; z-index: 10; background-image: url('2.jpg'); border-radius: 14px; }
-        .ladies .card-right-top { width: 28%; height: 140px; right: -2%; top: 10px; z-index: 1; background-image: url('3.jpg'); border-radius: 12px; }
-        .ladies .card-left-top { width: 30%; height: 160px; left: -4%; top: 40px; z-index: 2; background-image: url('1.jpg'); border-radius: 12px; }
-        .ladies .card-right-bottom { width: 36%; height: 170px; right: 0; top: 165px; z-index: 3; background-image: url('4.jpg'); border-radius: 12px; }
-        .ladies .card-left-bottom { width: 34%; height: 170px; left: 10%; top: 195px; z-index: 4; background-image: url('5.jpg'); border-radius: 12px; }
-        .gents { margin-top: 60px; position: relative; width: 100%; height: 380px; }
-        .gents .card-left-bottom { width: 36%; height: 180px; left: 4%; top: 190px; z-index: 2; background-image: url('10.jpg'); border-radius: 12px; }
-        .gents .card-right-bottom { width: 32%; height: 170px; right: 4%; top: 175px; z-index: 3; background-image: url('9.jpg'); border-radius: 12px; }
-        .gents .card-main { width: 42%; height: 240px; left: 29%; top: 10px; z-index: 10; background-image: url('6.jpg'); border-radius: 14px; }
-        .gents .card-left-top { width: 26%; height: 125px; left: -4%; top: 50px; z-index: 1; background-image: url('7.jpg'); border-radius: 12px; }
-        .gents .card-right-top { width: 30%; height: 155px; right: -4%; top: -5px; z-index: 4; background-image: url('8.jpg'); border-radius: 12px; }
+        .ladies .card-main { width: 44%; height: 230px; left: 28%; top: 0; z-index: 10; background-image: url('2.jpg'); }
+        .ladies .card-right-top { width: 28%; height: 135px; right: -2%; top: 10px; z-index: 1; background-image: url('3.jpg'); }
+        .ladies .card-left-top { width: 30%; height: 155px; left: -4%; top: 40px; z-index: 2; background-image: url('1.jpg'); }
+        .ladies .card-right-bottom { width: 36%; height: 160px; right: 0; top: 160px; z-index: 3; background-image: url('4.jpg'); }
+        .ladies .card-left-bottom { width: 34%; height: 160px; left: 10%; top: 185px; z-index: 4; background-image: url('5.jpg'); }
+        .gents { margin-top: 60px; position: relative; width: 100%; height: 400px; }
+        .gents .card-left-bottom { width: 36%; height: 170px; left: 4%; top: 180px; z-index: 2; background-image: url('10.jpg'); }
+        .gents .card-right-bottom { width: 32%; height: 160px; right: 4%; top: 165px; z-index: 3; background-image: url('9.jpg'); }
+        .gents .card-main { width: 42%; height: 230px; left: 29%; top: 10px; z-index: 10; background-image: url('6.jpg'); }
+        .gents .card-left-top { width: 26%; height: 120px; left: -4%; top: 50px; z-index: 1; background-image: url('7.jpg'); }
+        .gents .card-right-top { width: 30%; height: 150px; right: -4%; top: -5px; z-index: 4; background-image: url('8.jpg'); }
 
         /* ----- ФИНАЛЬНЫЙ БЛОК (ИМЕНА + ФОТО) ----- */
         .final-screen {
@@ -685,7 +686,7 @@
             .name-line { font-size: 3.4rem; }
             .ampersand-between { font-size: 7rem; left: -10px; top: 56%; }
             .maria-name { margin-left: 110px; margin-top: -5px; }
-            .moodboard, .gents { height: 340px; }
+            .moodboard, .gents { height: 360px; }
             .section-subtitle { font-size: 36px; }
         }
         @media (max-width: 580px) {
@@ -694,7 +695,7 @@
             .maria-name { margin-left: 90px; margin-top: -5px; }
             .final-name-item { font-size: 36px; letter-spacing: 4px; }
             .section-subtitle { font-size: 32px; }
-            .moodboard, .gents { height: 300px; }
+            .moodboard, .gents { height: 320px; }
         }
         @media (max-width: 480px) {
             .name-line { font-size: 2.4rem; }
@@ -706,10 +707,10 @@
             .radio-group { flex-direction: column; gap: 10px; }
             .section-subtitle { font-size: 28px; }
             .contact-row { flex-direction: column; align-items: center; gap: 6px; }
-            .moodboard, .gents { height: 260px; }
-            .ladies .card-main, .gents .card-main { height: 180px; }
-            .ladies .card-left-top, .ladies .card-right-top, .gents .card-left-top, .gents .card-right-top { height: 110px; }
-            .ladies .card-left-bottom, .ladies .card-right-bottom, .gents .card-left-bottom, .gents .card-right-bottom { height: 130px; }
+            .moodboard, .gents { height: 280px; }
+            .ladies .card-main, .gents .card-main { height: 170px; }
+            .ladies .card-left-top, .ladies .card-right-top, .gents .card-left-top, .gents .card-right-top { height: 100px; }
+            .ladies .card-left-bottom, .ladies .card-right-bottom, .gents .card-left-bottom, .gents .card-right-bottom { height: 120px; }
         }
     </style>
 </head>
