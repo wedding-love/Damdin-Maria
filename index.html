@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -799,46 +800,9 @@
             .ladies .card-right-bottom, .gents .card-right-bottom { bottom: 5px; right: 4%; top: auto; }
         }
 
-        /* ----- ПОЖЕЛАНИЯ ----- */
-        .wishes-screen { background: #ffffff; padding: 60px 20px 80px; }
-        .wishes-container { max-width: 450px; margin: 0 auto; text-align: center; }
-        .anim-slide-up, .anim-fade-in, .anim-slide-left, .anim-slide-right {
-            opacity: 0;
-            transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1);
-        }
-        .anim-slide-up { transform: translateY(40px); }
-        .anim-slide-left { transform: translateX(-40px); }
-        .anim-slide-right { transform: translateX(40px); }
-        .anim-fade-in { transform: none; }
-        .anim-slide-up.visible, .anim-fade-in.visible, .anim-slide-left.visible, .anim-slide-right.visible { opacity: 1; transform: translate(0) !important; }
-        .wishes-main-title {
-            font-family: 'Lighthaus', 'Quicksand', sans-serif;
-            font-weight: 400;
-            font-size: 42px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-        }
-        .wishes-handwritten-subtitle { font-family: 'Pinyon Script', cursive; font-size: 34px; margin-bottom: 35px; }
-        .single-wish-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            line-height: 1.8;
-            color: #555;
-            max-width: 380px;
-            margin: 0 auto 50px;
-        }
-        .wishes-vertical-divider { width: 1px; height: 60px; background: #b5b5b5; margin: 0 auto 35px; }
-        .pre-closing { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; line-height: 1.6; color: #121212; margin-bottom: 35px; }
-        .wishes-names-block { display: flex; flex-direction: column; align-items: center; margin-bottom: 45px; }
-        .name-item { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-weight: 300; font-size: 46px; text-transform: uppercase; letter-spacing: 5px; color: #121212; }
-        .ampersand-item { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 38px; font-weight: 400; margin: 12px 0; }
-        .couple-photo-container { width: 100%; padding: 0 10px; opacity: 0; transform: translateY(40px); transition: opacity 2s cubic-bezier(0.25,0.8,0.4,1), transform 2s cubic-bezier(0.25,0.8,0.4,1); }
-        .couple-photo-container.visible { opacity: 1; transform: translateY(0); }
-        .couple-photo { width: 100%; aspect-ratio: 3 / 2; background-image: url('конец.png'); background-size: cover; background-position: center; background-color: #f5f5f5; border-radius: 20px; }
-
         /* ----- АНКЕТА ГОСТЯ ----- */
-        .rsvp-screen { background: #ffffff; padding: 60px 20px; }
+        .rsvp-screen { background: #ffffff; padding: 60px 20px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .rsvp-screen.visible { opacity: 1; transform: translateY(0); }
         .rsvp-container { max-width: 500px; margin: 0 auto; background: #ffffff; padding: 40px 30px; box-shadow: none; }
         .rsvp-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 12px; text-align: center; white-space: nowrap; }
         .rsvp-subtitle { font-family: 'Pinyon Script', cursive; font-size: 28px; text-align: center; color: #555; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 15px; display: inline-block; width: 100%; }
@@ -861,7 +825,8 @@
         .hidden-message { text-align: center; margin-top: 20px; font-size: 12px; color: #1a1a1a; display: none; }
 
         /* ----- КОНТАКТЫ ----- */
-        .contacts-screen { background: #ffffff; padding: 30px 20px 50px; }
+        .contacts-screen { background: #ffffff; padding: 30px 20px 50px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .contacts-screen.visible { opacity: 1; transform: translateY(0); }
         .contacts-container { max-width: 450px; margin: 0 auto; text-align: center; }
         .contacts-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 15px; }
         .contacts-subtitle { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 1px; color: #777; margin-bottom: 30px; }
@@ -994,22 +959,6 @@
     </div>
 </div>
 
-<div class="wishes-screen" id="wishesScreen">
-    <div class="wishes-container">
-        <h2 class="wishes-main-title anim-slide-up">Пожелания</h2>
-        <div class="wishes-handwritten-subtitle anim-slide-up">Our wishes</div>
-        <div class="single-wish-text anim-slide-up">Ваши улыбки — лучший подарок! После свадьбы мы уезжаем в свадебное путешествие и не успеем насладиться красотой подаренных букетов. Вместо цветов будем рады бутылочке вашего любимого напитка, которую мы откроем на ближайшем семейном празднике.</div>
-        <div class="wishes-vertical-divider anim-fade-in"></div>
-        <div class="pre-closing anim-slide-up">До скорой встречи!<br>С любовью</div>
-        <div class="wishes-names-block">
-            <span class="name-item anim-slide-left" id="damdinWishes">Дамдин</span>
-            <span class="ampersand-item anim-slide-left" id="ampersandWishes">&</span>
-            <span class="name-item anim-slide-right" id="mariaWishes">Мария</span>
-        </div>
-        <div class="couple-photo-container" id="finalPhoto"><div class="couple-photo"></div></div>
-    </div>
-</div>
-
 <!-- АНКЕТА ГОСТЯ -->
 <div class="rsvp-screen" id="rsvpScreen">
     <div class="rsvp-container">
@@ -1130,60 +1079,7 @@
             }, { threshold: 0.3 }); 
             cardObs.observe(card); 
         });
-        
-        const wishesContainer = document.querySelector('.wishes-container');
-        if (wishesContainer) { 
-            const topObs = new IntersectionObserver((e) => { 
-                e.forEach(entry => { 
-                    if(entry.isIntersecting) { 
-                        document.querySelectorAll('.anim-slide-up').forEach(el => el.classList.add('visible')); 
-                        document.querySelector('.anim-fade-in')?.classList.add('visible'); 
-                        topObs.disconnect(); 
-                    } 
-                }); 
-            }, { threshold: 0.3 }); 
-            topObs.observe(wishesContainer); 
-            
-            const leftEl = document.querySelectorAll('.anim-slide-left'); 
-            if(leftEl.length) { 
-                const lObs = new IntersectionObserver((e) => { 
-                    e.forEach(entry => { 
-                        if(entry.isIntersecting) { 
-                            leftEl.forEach(el => el.classList.add('visible')); 
-                            lObs.disconnect(); 
-                        } 
-                    }); 
-                }, { threshold: 0.6 }); 
-                lObs.observe(document.querySelector('.wishes-names-block')); 
-            } 
-            
-            const rightEl = document.querySelector('.anim-slide-right'); 
-            if(rightEl) { 
-                const rObs = new IntersectionObserver((e) => { 
-                    e.forEach(entry => { 
-                        if(entry.isIntersecting) { 
-                            rightEl.classList.add('visible'); 
-                            rObs.disconnect(); 
-                        } 
-                    }); 
-                }, { threshold: 0.6 }); 
-                rObs.observe(rightEl); 
-            } 
-            
-            const finPhoto = document.getElementById('finalPhoto'); 
-            if(finPhoto) { 
-                const phObs = new IntersectionObserver((e) => { 
-                    e.forEach(entry => { 
-                        if(entry.isIntersecting) { 
-                            finPhoto.classList.add('visible'); 
-                            phObs.disconnect(); 
-                        } 
-                    }); 
-                }, { threshold: 0.25 }); 
-                phObs.observe(finPhoto); 
-            } 
-        }
-        
+
         const rsvpScreen = document.getElementById('rsvpScreen');
         if (rsvpScreen) {
             const rsvpObserver = new IntersectionObserver((entries) => {
