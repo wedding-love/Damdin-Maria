@@ -910,7 +910,7 @@
             </div>
             <button type="submit" class="submit-btn rsvp-animate">Отправить ответ</button>
         </form>
-        <div id="formMessage" class="hidden-message">Спасибо! Ждём вас на нашей свадьбе 🥂</div>
+        <div id="formMessage" class="hidden-message">✅ Спасибо! Ждём вас на нашей свадьбе 🥂</div>
     </div>
 </div>
 
@@ -1098,9 +1098,10 @@
             });
         }
 
-        // ---- ФОРМА ----
+        // ---- ФОРМА С ОЧИСТКОЙ ПОЛЕЙ ПОСЛЕ ОТПРАВКИ ----
         const form = document.getElementById('guestForm');
         const messageDiv = document.getElementById('formMessage');
+
         if (form) {
             form.addEventListener('submit', function(e) {
                 const nameInput = document.getElementById('guestName');
@@ -1109,9 +1110,59 @@
                     alert('Пожалуйста, укажите ваше имя');
                     return;
                 }
+                
+                // Показываем сообщение об успешной отправке
                 messageDiv.style.display = 'block';
-                setTimeout(() => { messageDiv.style.display = 'none'; }, 4000);
+                
+                // Очищаем все поля формы через 500ms (после отправки)
+                setTimeout(() => {
+                    form.reset();
+                    // Скрываем поле "Другое"
+                    const otherInputEl = document.getElementById('otherDrinkInput');
+                    if (otherInputEl) {
+                        otherInputEl.style.display = 'none';
+                    }
+                    const otherCheckEl = document.getElementById('drinkOtherCheck');
+                    if (otherCheckEl) {
+                        otherCheckEl.checked = false;
+                    }
+                }, 500);
+                
+                // Скрываем сообщение через 4 секунды
+                setTimeout(() => { 
+                    messageDiv.style.display = 'none'; 
+                }, 4000);
             });
+        }
+
+        // ---- ОЧИСТКА ФОРМЫ ПРИ ВОЗВРАТЕ СО СТРАНИЦЫ FORMPREE ----
+        // Проверяем, есть ли параметр в URL (Formspree возвращает ?success=true)
+        if (window.location.search.includes('success=true') || window.location.search.includes('success')) {
+            const form = document.getElementById('guestForm');
+            if (form) {
+                form.reset();
+                const otherInput = document.getElementById('otherDrinkInput');
+                if (otherInput) {
+                    otherInput.style.display = 'none';
+                }
+                const otherCheck = document.getElementById('drinkOtherCheck');
+                if (otherCheck) {
+                    otherCheck.checked = false;
+                }
+                // Показываем сообщение
+                const messageDiv = document.getElementById('formMessage');
+                if (messageDiv) {
+                    messageDiv.style.display = 'block';
+                    setTimeout(() => { 
+                        messageDiv.style.display = 'none'; 
+                    }, 4000);
+                }
+                // Убираем параметр из URL, чтобы при обновлении страницы не показывалось сообщение
+                if (window.history && window.history.replaceState) {
+                    const cleanUrl = window.location.href.split('?')[0];
+                    window.history.replaceState({}, document.title, cleanUrl);
+                }
+            }
         }
 
     })();
