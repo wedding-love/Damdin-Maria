@@ -440,15 +440,17 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            filter: brightness(0.15) contrast(1.1);
+            filter: brightness(0.5) contrast(1.05);
             transition: opacity 2.5s cubic-bezier(0.2,0.9,0.4,1) 0.3s;
             z-index: 1;
         }
 
+        .location-section.visible .location-bg { opacity: 0.5; }
+
         .location-card {
             position: relative;
             z-index: 2;
-            background: #fff;
+            background: rgba(255,255,255,0.97);
             padding: 40px 25px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -500,6 +502,14 @@
             transition: opacity 2.8s cubic-bezier(0.16,1,0.3,1.1), transform 2.8s cubic-bezier(0.16,1,0.3,1.1);
         }
 
+        .venue-address {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
         .btn-maps {
             display: inline-block;
             background: #1a1a1a;
@@ -520,7 +530,6 @@
             background: #333;
         }
 
-        .location-section.visible .location-bg { opacity: 1; }
         .location-section.visible .icon-scene { opacity: 1; transform: scale(1); }
         .location-section.visible .location-title { opacity: 1; transform: translateX(0); }
         .location-section.visible .save-the-place { opacity: 1; transform: skewX(-3deg) translateX(0); }
@@ -701,9 +710,9 @@
             z-index: 1; 
         }
         .ladies .card-left-top, .gents .card-left-top { 
-            width: 32%; 
+            width: 34%; 
             height: 200px; 
-            left: -4%; 
+            left: 8%; 
             top: 50px; 
             z-index: 2; 
         }
@@ -718,7 +727,7 @@
             width: 38%; 
             height: 210px; 
             left: 10%; 
-            top: 250px; 
+            top: 270px; 
             z-index: 4; 
         }
         
@@ -735,26 +744,26 @@
         .gents .card-left-bottom { background-image: url('10.JPG'); }
 
         .gents { margin-top: 80px; position: relative; width: 100%; height: 560px; }
-        .gents .card-left-bottom { width: 40%; height: 220px; left: 3%; top: 240px; z-index: 2; }
+        .gents .card-left-bottom { width: 40%; height: 220px; left: 8%; top: 250px; z-index: 2; }
         .gents .card-right-bottom { width: 36%; height: 210px; right: 4%; top: 215px; z-index: 3; }
         .gents .card-main { width: 46%; height: 300px; left: 27%; top: 15px; z-index: 10; }
-        .gents .card-left-top { width: 28%; height: 155px; left: -4%; top: 65px; z-index: 1; }
+        .gents .card-left-top { width: 30%; height: 155px; left: 8%; top: 65px; z-index: 1; }
         .gents .card-right-top { width: 34%; height: 200px; right: -6%; top: -10px; z-index: 4; }
 
         @media (max-width: 580px) {
             .moodboard, .gents { height: 500px; }
             .ladies .card-main, .gents .card-main { width: 38%; height: 230px; left: 31%; top: 100px; }
-            .ladies .card-left-top, .gents .card-left-top { top: -5px; }
+            .ladies .card-left-top, .gents .card-left-top { top: -5px; left: 4%; }
             .ladies .card-right-top, .gents .card-right-top { top: 10px; right: 4%; }
-            .ladies .card-left-bottom, .gents .card-left-bottom { bottom: -35px; }
+            .ladies .card-left-bottom, .gents .card-left-bottom { bottom: -35px; top: auto; left: 6%; }
             .ladies .card-right-bottom, .gents .card-right-bottom { bottom: 5px; right: 5%; }
         }
         @media (max-width: 480px) {
             .moodboard, .gents { height: 460px; margin-bottom: 50px; }
             .ladies .card-main, .gents .card-main { width: 40%; height: 200px; left: 30%; top: 90px; }
-            .ladies .card-left-top, .gents .card-left-top { top: -10px; }
+            .ladies .card-left-top, .gents .card-left-top { top: -10px; left: 2%; }
             .ladies .card-right-top, .gents .card-right-top { top: 5px; right: 3%; }
-            .ladies .card-left-bottom, .gents .card-left-bottom { bottom: -30px; }
+            .ladies .card-left-bottom, .gents .card-left-bottom { bottom: -30px; top: auto; left: 4%; }
             .ladies .card-right-bottom, .gents .card-right-bottom { bottom: 0px; right: 4%; }
         }
 
@@ -906,7 +915,7 @@
         <h2 class="location-title">МЕСТО<br>ПРОВЕДЕНИЯ</h2>
         <div class="save-the-place">Save the place!</div>
         <p class="venue-name">Банкетный зал «Баран на корове»</p>
-        <p class="venue-address" style="font-family:'Montserrat',sans-serif;font-size:0.85rem;font-weight:300;color:#555;margin-bottom:15px;">г. Улан-Удэ, Бабушкина, 4</p>
+        <p class="venue-address">г. Улан-Удэ, Бабушкина, 4</p>
         <a href="https://yandex.by/maps/198/ulan-ude/?ll=107.595465%2C51.817869&mode=poi&poi%5Bpoint%5D=107.595029%2C51.817745&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D101150674348&z=16.62" target="_blank" class="btn-maps">Как добраться</a>
     </div>
 </div>
