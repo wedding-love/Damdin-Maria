@@ -375,8 +375,8 @@
 
         .heart-svg {
             position: absolute;
-            width: 38px;
-            height: 38px;
+            width: 48px;
+            height: 48px;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-46%);
@@ -385,7 +385,7 @@
 
         .heart-path {
             stroke: #1a1a1a;
-            stroke-width: 1.4;
+            stroke-width: 2;
             fill: none;
         }
 
@@ -440,17 +440,17 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            filter: brightness(0.5) contrast(1.05);
+            filter: brightness(0.2) contrast(1.1);
             transition: opacity 2.5s cubic-bezier(0.2,0.9,0.4,1) 0.3s;
             z-index: 1;
         }
 
-        .location-section.visible .location-bg { opacity: 0.5; }
+        .location-section.visible .location-bg { opacity: 0.7; }
 
         .location-card {
             position: relative;
             z-index: 2;
-            background: rgba(255,255,255,0.97);
+            background: rgba(255,255,255,0.96);
             padding: 40px 25px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -695,40 +695,79 @@
         }
         .look-card.visible-card { opacity: 1; transform: scale(1); }
         
-        .ladies .card-main, .gents .card-main { 
+        /* LADIES */
+        .ladies .card-main { 
             width: 48%; 
             height: 320px; 
             left: 26%; 
             top: 0; 
             z-index: 10; 
         }
-        .ladies .card-right-top, .gents .card-right-top { 
+        .ladies .card-right-top { 
             width: 30%; 
             height: 180px; 
             right: -2%; 
-            top: 10px; 
+            top: -10px; 
             z-index: 1; 
         }
-        .ladies .card-left-top, .gents .card-left-top { 
+        .ladies .card-left-top { 
             width: 34%; 
             height: 200px; 
             left: 8%; 
             top: 50px; 
             z-index: 2; 
         }
-        .ladies .card-right-bottom, .gents .card-right-bottom { 
+        .ladies .card-right-bottom { 
             width: 40%; 
             height: 210px; 
             right: 0; 
-            top: 210px; 
+            top: 225px; 
             z-index: 3; 
         }
-        .ladies .card-left-bottom, .gents .card-left-bottom { 
+        .ladies .card-left-bottom { 
             width: 38%; 
             height: 210px; 
             left: 10%; 
             top: 270px; 
             z-index: 4; 
+        }
+        
+        /* GENTS */
+        .gents { margin-top: 80px; position: relative; width: 100%; height: 560px; }
+        .gents .card-main { 
+            width: 46%; 
+            height: 300px; 
+            left: 27%; 
+            top: 15px; 
+            z-index: 10; 
+        }
+        .gents .card-right-top { 
+            width: 34%; 
+            height: 200px; 
+            right: -6%; 
+            top: -20px; 
+            z-index: 4; 
+        }
+        .gents .card-left-top { 
+            width: 30%; 
+            height: 155px; 
+            left: 8%; 
+            top: 65px; 
+            z-index: 1; 
+        }
+        .gents .card-right-bottom { 
+            width: 36%; 
+            height: 210px; 
+            right: 4%; 
+            top: 230px; 
+            z-index: 3; 
+        }
+        .gents .card-left-bottom { 
+            width: 40%; 
+            height: 220px; 
+            left: 8%; 
+            top: 250px; 
+            z-index: 2; 
         }
         
         .ladies .card-main { background-image: url('2.JPG'); }
@@ -743,28 +782,21 @@
         .gents .card-right-bottom { background-image: url('9.JPG'); }
         .gents .card-left-bottom { background-image: url('10.JPG'); }
 
-        .gents { margin-top: 80px; position: relative; width: 100%; height: 560px; }
-        .gents .card-left-bottom { width: 40%; height: 220px; left: 8%; top: 250px; z-index: 2; }
-        .gents .card-right-bottom { width: 36%; height: 210px; right: 4%; top: 215px; z-index: 3; }
-        .gents .card-main { width: 46%; height: 300px; left: 27%; top: 15px; z-index: 10; }
-        .gents .card-left-top { width: 30%; height: 155px; left: 8%; top: 65px; z-index: 1; }
-        .gents .card-right-top { width: 34%; height: 200px; right: -6%; top: -10px; z-index: 4; }
-
         @media (max-width: 580px) {
             .moodboard, .gents { height: 500px; }
             .ladies .card-main, .gents .card-main { width: 38%; height: 230px; left: 31%; top: 100px; }
             .ladies .card-left-top, .gents .card-left-top { top: -5px; left: 4%; }
-            .ladies .card-right-top, .gents .card-right-top { top: 10px; right: 4%; }
+            .ladies .card-right-top, .gents .card-right-top { top: -5px; right: 4%; }
             .ladies .card-left-bottom, .gents .card-left-bottom { bottom: -35px; top: auto; left: 6%; }
-            .ladies .card-right-bottom, .gents .card-right-bottom { bottom: 5px; right: 5%; }
+            .ladies .card-right-bottom, .gents .card-right-bottom { bottom: 10px; right: 5%; top: auto; }
         }
         @media (max-width: 480px) {
             .moodboard, .gents { height: 460px; margin-bottom: 50px; }
             .ladies .card-main, .gents .card-main { width: 40%; height: 200px; left: 30%; top: 90px; }
             .ladies .card-left-top, .gents .card-left-top { top: -10px; left: 2%; }
-            .ladies .card-right-top, .gents .card-right-top { top: 5px; right: 3%; }
+            .ladies .card-right-top, .gents .card-right-top { top: -5px; right: 3%; }
             .ladies .card-left-bottom, .gents .card-left-bottom { bottom: -30px; top: auto; left: 4%; }
-            .ladies .card-right-bottom, .gents .card-right-bottom { bottom: 0px; right: 4%; }
+            .ladies .card-right-bottom, .gents .card-right-bottom { bottom: 5px; right: 4%; top: auto; }
         }
 
         /* ----- ПОЖЕЛАНИЯ ----- */
@@ -806,8 +838,7 @@
         .couple-photo { width: 100%; aspect-ratio: 3 / 2; background-image: url('конец.png'); background-size: cover; background-position: center; background-color: #f5f5f5; border-radius: 20px; }
 
         /* ----- АНКЕТА ГОСТЯ ----- */
-        .rsvp-screen { background: #ffffff; padding: 60px 20px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); }
-        .rsvp-screen.visible { opacity: 1; transform: translateY(0); }
+        .rsvp-screen { background: #ffffff; padding: 60px 20px; }
         .rsvp-container { max-width: 500px; margin: 0 auto; background: #ffffff; padding: 40px 30px; box-shadow: none; }
         .rsvp-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 12px; text-align: center; white-space: nowrap; }
         .rsvp-subtitle { font-family: 'Pinyon Script', cursive; font-size: 28px; text-align: center; color: #555; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 15px; display: inline-block; width: 100%; }
@@ -830,8 +861,7 @@
         .hidden-message { text-align: center; margin-top: 20px; font-size: 12px; color: #1a1a1a; display: none; }
 
         /* ----- КОНТАКТЫ ----- */
-        .contacts-screen { background: #ffffff; padding: 30px 20px 50px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); }
-        .contacts-screen.visible { opacity: 1; transform: translateY(0); }
+        .contacts-screen { background: #ffffff; padding: 30px 20px 50px; }
         .contacts-container { max-width: 450px; margin: 0 auto; text-align: center; }
         .contacts-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 15px; }
         .contacts-subtitle { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 1px; color: #777; margin-bottom: 30px; }
