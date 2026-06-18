@@ -411,13 +411,13 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            filter: grayscale(100%) contrast(1.05);
+            filter: brightness(0.3) contrast(1.05);
             transition: opacity 3.5s 0.5s;
             z-index: 1;
             pointer-events: none;
             border-radius: 8px;
         }
-        .location-section.visible .location-bg { opacity: 0.2; }
+        .location-section.visible .location-bg { opacity: 0.6; }
 
         .location-card {
             position: relative;
@@ -631,15 +631,12 @@
         /* ----- АНКЕТА ГОСТЯ ----- */
         .rsvp-screen { background: #fff; padding: 30px 20px 30px; }
         .rsvp-container { max-width: 500px; margin: 0 auto; background: #fff; padding: 40px 30px; text-align: left; }
-        .rsvp-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; text-align: center; margin-bottom: 8px; }
-        .rsvp-deadline {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 300;
-            color: #888;
-            text-align: center;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
+        .rsvp-title { 
+            font-family: 'Pinyon Script', cursive;
+            font-size: 38px; 
+            text-align: center; 
+            margin-bottom: 30px;
+            color: #1a1a1a;
         }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; color: #1a1a1a; }
@@ -741,6 +738,7 @@
             .checkbox-group { gap: 10px; }
             .checkbox-group label { font-size: 13px; }
             .radio-group-horizontal { flex-direction: column; gap: 10px; }
+            .rsvp-title { font-size: 28px; }
         }
     </style>
 </head>
@@ -775,6 +773,9 @@
         <div class="line line-top"></div>
         <div class="date-block">
             <span class="date-number from-left-1">21</span><span class="dot">.</span><span class="date-number from-right">08</span><span class="dot">.</span><span class="date-number from-left-2">26</span>
+        </div>
+        <div class="date-text" style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 2px; color: #555; margin-top: 8px; opacity: 0; transition: opacity 4s 1.8s;">
+            21 августа 2026
         </div>
         <div class="line line-bottom"></div>
         <div class="calendar-section">
@@ -843,7 +844,7 @@
 <div class="dresscode-screen" id="dresscodeScreen">
     <div class="dresscode-container">
         <h1 class="dresscode-main-title" id="dresscodeMainTitle">Дресс-код</h1>
-        <p class="dresscode-description" id="dresscodeDescription">Мы очень старались сделать нашу свадьбу стильной. Поэтому будем рады, если вы поддержите нашу цветовую гамму.</p>
+        <p class="dresscode-description" id="dresscodeDescription">Мы очень ждём и готовимся к нашему незабываемому дню! Поддержите нас Вашими улыбками и объятиями, а также красивыми нарядами в палитре мероприятия.</p>
         <div class="color-palette">
             <span class="color-circle color-1"></span>
             <span class="color-circle color-2"></span>
@@ -871,42 +872,41 @@
 <!-- АНКЕТА ГОСТЯ -->
 <div class="rsvp-screen" id="rsvpScreen">
     <div class="rsvp-container">
-        <h2 class="rsvp-title rsvp-animate">Анкета гостя</h2>
-        <div class="rsvp-deadline rsvp-animate">Дедлайн: 31 июля</div>
+        <h2 class="rsvp-title rsvp-animate">Please, RSVP</h2>
         <form id="guestForm" action="https://formspree.io/f/mbdevjvn" method="POST">
             <div class="form-group rsvp-animate">
                 <label>Ваше имя и фамилия</label>
-                <input type="text" name="name" id="guestName" placeholder="Например, Анна Петрова" required>
+                <input type="text" name="Имя и фамилия" id="guestName" placeholder="Например, Анна Петрова" required>
             </div>
             <div class="form-group rsvp-animate">
                 <label>Планируете присутствовать?</label>
                 <div class="radio-group-horizontal">
-                    <label><input type="radio" name="attendance" value="yes" required> Да, с радостью!</label>
-                    <label><input type="radio" name="attendance" value="no"> К сожалению, нет</label>
+                    <label><input type="radio" name="Присутствие" value="Да, с радостью!" required> Да, с радостью!</label>
+                    <label><input type="radio" name="Присутствие" value="Нет, к сожалению"> К сожалению, нет</label>
                 </div>
             </div>
             <div class="form-group rsvp-animate">
                 <label>С кем вы пойдете на праздник?</label>
-                <input type="text" name="companion" id="companion" placeholder="Например, с мужем Алексеем">
+                <input type="text" name="С кем придет" id="companion" placeholder="Например, с мужем Алексеем">
             </div>
             <div class="form-group rsvp-animate">
                 <label>Выберите ваши любимые напитки</label>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="drink_white_wine" value="white_wine"> Белое вино</label>
-                    <label><input type="checkbox" name="drink_red_wine" value="red_wine"> Красное вино</label>
-                    <label><input type="checkbox" name="drink_vodka" value="vodka"> Водка</label>
-                    <label><input type="checkbox" name="drink_whiskey" value="whiskey"> Виски</label>
-                    <label><input type="checkbox" name="drink_soft" value="soft"> Безалкогольные</label>
-                    <label><input type="checkbox" id="drinkOtherCheck" name="drink_other" value="other"> Другое</label>
+                    <label><input type="checkbox" name="Напитки" value="Белое вино"> Белое вино</label>
+                    <label><input type="checkbox" name="Напитки" value="Красное вино"> Красное вино</label>
+                    <label><input type="checkbox" name="Напитки" value="Водка"> Водка</label>
+                    <label><input type="checkbox" name="Напитки" value="Виски"> Виски</label>
+                    <label><input type="checkbox" name="Напитки" value="Безалкогольное"> Безалкогольные</label>
+                    <label><input type="checkbox" id="drinkOtherCheck" name="Напитки" value="Другое"> Другое</label>
                 </div>
                 <div class="other-drink-input" id="otherDrinkInput" style="margin-top: 8px; display: none;">
-                    <input type="text" name="drink_other_text" placeholder="Напишите, что именно..." style="width:100%; padding: 10px 0; border: none; border-bottom: 1px solid #ddd; font-family: 'Montserrat', sans-serif; font-size: 14px; background: transparent; outline: none; color: #1a1a1a;">
+                    <input type="text" name="Другое напиток" placeholder="Напишите, что именно..." style="width:100%; padding: 10px 0; border: none; border-bottom: 1px solid #ddd; font-family: 'Montserrat', sans-serif; font-size: 14px; background: transparent; outline: none; color: #1a1a1a;">
                 </div>
                 <div class="drinks-hint" style="font-family: 'Montserrat', sans-serif; font-size: 11px; color: #888; margin-top: 8px; font-style: italic;">✔️ Отметьте все варианты, которые вам нравятся</div>
             </div>
             <div class="form-group rsvp-animate">
                 <label>Ваши пожелания или комментарии (аллергии, диета)</label>
-                <input type="text" name="wishes" id="guestWishes" placeholder="Сообщите нам важные детали...">
+                <input type="text" name="Пожелания" id="guestWishes" placeholder="Сообщите нам важные детали...">
             </div>
             <button type="submit" class="submit-btn rsvp-animate">Отправить ответ</button>
         </form>
@@ -964,6 +964,22 @@
             });
         }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
         fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // ---- ДАТА ТЕКСТ ----
+        const dateText = document.querySelector('.date-text');
+        if (dateText) {
+            const dateObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            dateText.style.opacity = '1';
+                        }, 1800);
+                        dateObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+            dateObserver.observe(document.querySelector('.invitation-container'));
+        }
 
         // ---- ВТОРОЙ ЭКРАН: ДАТА + КАЛЕНДАРЬ ----
         const secondContainer = document.querySelector('.invitation-container');
@@ -1098,7 +1114,7 @@
             });
         }
 
-        // ---- ФОРМА С ОЧИСТКОЙ ПОЛЕЙ ПОСЛЕ ОТПРАВКИ ----
+        // ---- ФОРМА С ПОЛНОЙ ОЧИСТКОЙ ----
         const form = document.getElementById('guestForm');
         const messageDiv = document.getElementById('formMessage');
 
@@ -1111,53 +1127,81 @@
                     return;
                 }
                 
-                // Показываем сообщение об успешной отправке
                 messageDiv.style.display = 'block';
                 
-                // Очищаем все поля формы через 500ms (после отправки)
-                setTimeout(() => {
+                setTimeout(function() {
                     form.reset();
-                    // Скрываем поле "Другое"
+                    
+                    const allRadios = form.querySelectorAll('input[type="radio"]');
+                    allRadios.forEach(function(radio) {
+                        radio.checked = false;
+                    });
+                    
+                    const allCheckboxes = form.querySelectorAll('input[type="checkbox"]');
+                    allCheckboxes.forEach(function(checkbox) {
+                        checkbox.checked = false;
+                    });
+                    
+                    const allSelects = form.querySelectorAll('select');
+                    allSelects.forEach(function(select) {
+                        select.selectedIndex = 0;
+                    });
+                    
                     const otherInputEl = document.getElementById('otherDrinkInput');
                     if (otherInputEl) {
                         otherInputEl.style.display = 'none';
+                        const otherTextInput = otherInputEl.querySelector('input');
+                        if (otherTextInput) {
+                            otherTextInput.value = '';
+                        }
                     }
-                    const otherCheckEl = document.getElementById('drinkOtherCheck');
-                    if (otherCheckEl) {
-                        otherCheckEl.checked = false;
-                    }
+                    
                 }, 500);
                 
-                // Скрываем сообщение через 4 секунды
-                setTimeout(() => { 
+                setTimeout(function() { 
                     messageDiv.style.display = 'none'; 
                 }, 4000);
             });
         }
 
-        // ---- ОЧИСТКА ФОРМЫ ПРИ ВОЗВРАТЕ СО СТРАНИЦЫ FORMPREE ----
-        // Проверяем, есть ли параметр в URL (Formspree возвращает ?success=true)
+        // ---- ОЧИСТКА ПРИ ВОЗВРАТЕ ----
         if (window.location.search.includes('success=true') || window.location.search.includes('success')) {
             const form = document.getElementById('guestForm');
             if (form) {
                 form.reset();
+                
+                const allRadios = form.querySelectorAll('input[type="radio"]');
+                allRadios.forEach(function(radio) {
+                    radio.checked = false;
+                });
+                
+                const allCheckboxes = form.querySelectorAll('input[type="checkbox"]');
+                allCheckboxes.forEach(function(checkbox) {
+                    checkbox.checked = false;
+                });
+                
+                const allSelects = form.querySelectorAll('select');
+                allSelects.forEach(function(select) {
+                    select.selectedIndex = 0;
+                });
+                
                 const otherInput = document.getElementById('otherDrinkInput');
                 if (otherInput) {
                     otherInput.style.display = 'none';
+                    const otherTextInput = otherInput.querySelector('input');
+                    if (otherTextInput) {
+                        otherTextInput.value = '';
+                    }
                 }
-                const otherCheck = document.getElementById('drinkOtherCheck');
-                if (otherCheck) {
-                    otherCheck.checked = false;
-                }
-                // Показываем сообщение
+                
                 const messageDiv = document.getElementById('formMessage');
                 if (messageDiv) {
                     messageDiv.style.display = 'block';
-                    setTimeout(() => { 
+                    setTimeout(function() { 
                         messageDiv.style.display = 'none'; 
                     }, 4000);
                 }
-                // Убираем параметр из URL, чтобы при обновлении страницы не показывалось сообщение
+                
                 if (window.history && window.history.replaceState) {
                     const cleanUrl = window.location.href.split('?')[0];
                     window.history.replaceState({}, document.title, cleanUrl);
